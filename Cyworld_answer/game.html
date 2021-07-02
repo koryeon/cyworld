@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="styles/game.css" rel="stylesheet">
+    <title>Game</title>
+
+    <script>
+        const startword=()=>{
+
+           const word = document.getElementById("word").innerText;
+            const lastword=word[word.length-1]
+
+            const myword = document.getElementById("myword").value
+            const firstword = myword[0]
+
+            if(lastword===firstword){
+
+                document.getElementById("result").innerText="정답입니다."
+                document.getElementById("word").innerText=myword
+                document.getElementById("myword").value=""
+            }else{
+                document.getElementById("result").innerText="틀렸습니다."
+            }
+
+        }
+
+
+        const random__lotto=()=>{
+            
+            // const number1= document.getElementById("num1").innerText;
+            // number= String(Math.floor(Math.random()*1000000)).padStart(1,"0")
+            const number1= Math.floor(Math.random()*45+1);
+            document.getElementById("num1").innerText=number1;
+
+            const number2= Math.floor(Math.random()*45+1);
+            document.getElementById("num2").innerText=number2;
+
+            const number3= Math.floor(Math.random()*45+1);
+            document.getElementById("num3").innerText=number3;
+
+            const number4= Math.floor(Math.random()*45+1);
+            document.getElementById("num4").innerText=number4;
+
+            const number5= Math.floor(Math.random()*45+1);
+            document.getElementById("num5").innerText=number5;
+
+            const number6= Math.floor(Math.random()*45+1);
+            document.getElementById("num6").innerText=number6;
+
+            // 중복숫자 없게 만들기  
+            
+            
+
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wrapper__header">
+            <span class="word1">GAME</span> <span class="word2">TODAY Choice</span>
+            <div class="line"></div>
+
+        </div>
+        <div class="wrapper__body">
+            <div class="wrapper__word">
+                <div class="image">
+                </div>
+                <div class="title">끝말잇기</div>
+                <div class="suggest">  
+               <span class="subtitle">제시어 :</span> <span id="word"> 뉴비즈코드</span> </div>
+                <div class="input">
+                    <input id="myword" class="wordtext" type="text" placeholder="단어를 입력하세요." />
+                   <button class="button" onclick="startword()">검색</button>
+                   
+
+                </div>
+                <div id="result" class="value">결과!</div>
+            </div>
+            <div class="wrapper__lotto">
+                <div class="lotto__image"></div>
+                <div class="lotto__title">LOTTO</div>
+                <div class="lotto__subtitle">버튼을 누르세요</div>
+                <div class="lotto__number">
+                    <span id="num1">3</span>
+                    <span id="num2">5</span>
+                    <span id="num3">10</span>
+                    <span id="num4">24</span>
+                    <span id="num5">30</span>
+                    <span id="num6">34</span>
+                </div>
+                <div class="lotto__button">
+                    <button onclick="random__lotto()">Button</button>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
